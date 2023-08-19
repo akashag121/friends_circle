@@ -1,0 +1,57 @@
+<mat-toolbar color="primary" class="sticky">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <div fxLayout="row">
+      <button mat-button>
+        <!-- <mat-icon>group</mat-icon> -->
+       
+        <!-- <span class="logo">FriendsCircle</span> -->
+        <img src="../../../assets/logo.png" alt="logo" width="200px" height="50px">
+      </button>
+      <!-- <div> -->
+        <button mat-button routerLink="/dashboard/home">
+          <mat-icon style="align-items:center">home_app_logo</mat-icon>
+          Home</button>
+        <button mat-button routerLink="/dashboard/friends">
+          <mat-icon style="align-items:center">diversity_3</mat-icon>
+          Friends</button>
+          
+          <button mat-button routerLink="/dashboard/network">
+            <mat-icon style="align-items:center">hub</mat-icon>
+            Network</button>
+            <button mat-button routerLink="/dashboard/timeline">
+              <mat-icon style="align-items:center">account_circle</mat-icon>
+              Timeline</button>
+
+              <button *ngIf="isAdmin" mat-button routerLink="/dashboard/allusers">
+                <mat-icon style="align-items:center">groups</mat-icon>
+                AllUsers</button>
+      <!-- </div> -->
+    </div>
+    <div>
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button> -->
+      <!-- <button
+       
+        mat-button
+        [matMenuTriggerFor]="menu"
+        fxLayoutAlign="end"
+      >
+        Menu
+      </button> -->
+    </div>
+    <button mat-icon-button (click)="logOut()">
+    <mat-icon>logout</mat-icon>
+  </button>
+  </mat-toolbar-row>
+  <!-- <mat-toolbar-row fxLayoutAlign="space-between end">
+    <button mat-button>Home</button>
+    <button mat-button>About us</button>
+    <button mat-button>Contact us</button>
+  </mat-toolbar-row> -->
+</mat-toolbar>
+<!-- Menu Items -->
+<mat-menu #menu="matMenu" fxLayoutAlign="end">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>

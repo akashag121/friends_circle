@@ -1,0 +1,14 @@
+<div class="card sticky" style="width: 24rem; overflow: hidden; overflow: auto; padding-top: 10px; text-align: center;">
+    
+    <!-- <div class="card"> -->
+        <h5 class="card-title">Add New Post</h5>
+        <form #form="ngForm" (ngSubmit)="addNewPostSubmit()">
+            <input type="file" class="form-control" id="customFile" (change)="onImageChange($event)"
+            name="image" style="width: 300px; margin-left: 20px; margin-bottom: 10px;">
+            <textarea matInput rows="5" cols="40" placeholder="Add Post.." #data="ngModel" name="postData" [(ngModel)]="addNewPostPayload.postCaption"></textarea>
+            <button mat-raised-button color="primary" style="margin-bottom: 5px;" [disabled]="addNewPostPayload.postCaption.length===0"><mat-icon>keyboard_double_arrow_right</mat-icon>POST</button>
+                
+        </form>
+    <!-- </div> -->
+   
+</div>

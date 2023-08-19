@@ -1,0 +1,51 @@
+<mat-tab-group style="padding-top: 50px;">
+    <mat-tab label="Posts">
+        <div class="row">
+            <div class="col-7" style="background-color: rgb(245, 245, 245);">
+                <app-posts (myEvent)="postComment($event)" [likeOrCommentChanged]="likeOrCommentChanged" (SeeAllLikesEvent)="SeeAllLikesEvent($event)" (SeeAllCommentsEvent)="SeeAllCommentsEvent($event)" (addNewPostEvent)="addNewPostEvent($event)"></app-posts>
+
+            </div>
+
+            <div class="col-5" *ngIf="IsCommentEnabled">
+                <app-comments [postToBeCommented]="postToBeCommented" (commentAdded)="commentAdded($event)"></app-comments>
+            </div>
+            <!-- <div class="col-5" *ngIf="!IsCommentEnabled" style="background-color: rgb(245, 245, 245);">
+            </div> -->
+
+            <div class="col-5" *ngIf="IsLikeEnabled">
+                <app-likecount [postId]="postIdForSeeingAllLikes"></app-likecount>
+            </div>
+            <!-- <div class="col-5" *ngIf="!IsLikeEnabled" style="background-color: rgb(0, 119, 119);">
+            </div> -->
+
+            <div class="col-5" *ngIf="IsCommentToWatchEnabled">
+                <app-commentcount  [postId]="postIdForSeeingAllComments"></app-commentcount>
+            </div>
+
+            <div class="col-5" *ngIf="IsAddNewPostEnabled">
+                <app-addnewpost></app-addnewpost>
+            </div>
+
+            <div class="col-5" *ngIf="!IsCommentToWatchEnabled && !IsCommentEnabled && !IsLikeEnabled" style="background-color: rgb(245, 244, 244);">
+            </div>
+
+        </div>
+    </mat-tab>
+    <mat-tab label="Stories">
+
+        <div class="row">
+            <div class="col-7" style="background-color: rgb(245, 245, 245);">
+                <app-stories  (addNewStoryEvent)="addNewStoryEvent($event)"></app-stories>
+
+            </div>
+
+            <div class="col-5" *ngIf="IsAddNewStoryEnabled">
+                <app-addnewstory></app-addnewstory>
+            </div>
+
+            <div class="col-5" *ngIf="!IsAddNewStoryEnabled" style="background-color: rgb(245, 244, 244);">
+            </div>
+        </div>
+
+    </mat-tab>
+</mat-tab-group>

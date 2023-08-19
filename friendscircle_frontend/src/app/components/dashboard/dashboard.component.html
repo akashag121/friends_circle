@@ -1,0 +1,18 @@
+
+<app-header>
+
+</app-header>
+<div class="row">
+    <div class="col-4" style="position: relative;">
+        <app-leftsidebar [cufullname]="currentuserfullname" [cudescription]="currentuserdescription" [cupostcount]="currentuserpostcount" [cufriendscount]="currentuserfriendscount" [cuimageid]="currentuserimageId"></app-leftsidebar>
+    </div>
+    <div class="col-8">
+        <router-outlet></router-outlet>
+
+    </div>
+    <!-- <div class="col-4">
+        <app-stories></app-stories>
+
+    </div> -->
+    
+</div>

@@ -1,0 +1,121 @@
+<section class="vh-1100 " style="background-color: rgb(109, 72, 245);">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-1">
+                        <div class="row">
+                            <div class="col-12 text-center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                                <h3>New User Registration</h3>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-9">
+
+                                <!-- <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p> -->
+
+                                <form #form="ngForm" (ngSubmit)="registerFormSubmit()">
+                                    <!-- <div class="row">
+                                        <div class="col-12 text-center">
+                                            <h3>New User Registration</h3>
+                                        </div>
+                                    </div> -->
+                                    <div class="d-flex flex-row align-items-center mb-2">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example1c">Full Name</label>
+                                            <input required type="text" name="fullname" placeholder="Full Name" [(ngModel)]="registerform.fullName" class="form-control" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example3c">Email</label>
+                                            <input [(ngModel)]="registerform.email" placeholder="Email" type="email" required email
+                                                name="email" class="form-control" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example1c">UserName (Must be unique)</label>
+                                            <input required type="text" placeholder="User Name" [(ngModel)]="registerform.username" name="username" class="form-control" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example3c">Date of Birth</label>
+                                            <input [(ngModel)]="registerform.dob" type="date" required name="dob"
+                                                class="form-control" />
+
+                                        </div>
+                                    </div>
+                                    <mat-radio-group aria-label="Select an option" #gender="ngModel" required
+                                        name="gender" [(ngModel)]="registerform.gender">
+                                        <div>Gender</div>
+                                        <mat-radio-button value="Male">Male</mat-radio-button>
+                                        <mat-radio-button value="Female">Female</mat-radio-button>
+                                        <mat-radio-button value="Others">Prefer not to say</mat-radio-button>
+                                    </mat-radio-group>
+
+                                    <mat-radio-group aria-label="Select an option" #gender="ngModel" required
+                                        name="description" [(ngModel)]="registerform.description">
+                                        <div>Are you a: </div>
+                                        <mat-radio-button value="Student">Student</mat-radio-button>
+                                        <mat-radio-button value="Job Professional">Job Professional</mat-radio-button>
+                                        <mat-radio-button value="Businessmen">Businessmen</mat-radio-button>
+                                        <mat-radio-button value="Homemaker">Homemaker</mat-radio-button>
+                                    </mat-radio-group>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example4c">Password</label>
+                                            <input [(ngModel)]="registerform.password" placeholder="Password( min 6 digits/max 12 digits)" type="password" required
+                                                minlength="6" maxlength="12" name="password" #password="ngModel"
+                                                class="form-control" />
+
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                        <div class=" flex-fill mb-0">
+                                            <label>Confirm password</label>
+                                            <input type="password" [(ngModel)]="obj.confirm" placeholder="Confirm Password" #confirmpassword="ngModel"
+                                                required minlength="6" maxlength="12" name="confirmpassword"
+                                                class="form-control" />
+
+                                        </div>
+                                    </div>
+
+                        
+
+                                    <div class="d-flex justify-content-center mx-2 mb-2 mb-lg-2">
+                                        <button type="submit" class="btn btn-primary"
+                                            [disabled]="!(form.valid && password.value==confirmpassword.value)">Register</button>
+                                    </div>
+                                    <p class="text-center">Have already an account? <a
+                                            routerLink="/" class="fw-bold text-body"><u>Login here</u></a></p>
+                                </form>
+                            </div>
+                            <div class="col-md-3" style="padding-top: 80px;">
+                                <input type="file" class="form-control" id="customFile" (change)="onImageChange($event)">
+                                <img src="../../../assets/defaultuser.png" class="img-fluid profileimage" height="200px" width="200px"  alt="Sample image">
+
+                            </div>
+                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

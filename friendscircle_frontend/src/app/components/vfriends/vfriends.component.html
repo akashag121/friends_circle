@@ -1,0 +1,54 @@
+
+<div>
+    
+
+    <div class="container" style="padding-top: 62px;">
+
+       
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12" style="text-align: center;">
+                                <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> All Friends ({{currentFriendFriendsList.length}})</h3>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div *ngIf="currentFriendFriendsList.length === 0"><span> No Friends!</span></div>
+
+                        <div class="card " style="width: 35rem;" *ngFor="let friend of currentFriendFriendsListWithImgUrl; let idx='index'">
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="container">
+                                            <img [src]="friend.friendImageUrl" class="card-img-top" alt="..."
+                                                style="border-radius: 150px; height: 55px; width: 55px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">{{friend.friendName | titlecase}}</li>
+                                                    <!-- <li class="list-group-item">
+                                                         <button mat-raised-button color="primary" style="margin-right: 10px;">Visit Profile</button> 
+
+                                                    </li> -->
+
+                                                </ul>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

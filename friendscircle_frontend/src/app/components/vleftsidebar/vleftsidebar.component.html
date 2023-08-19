@@ -1,0 +1,43 @@
+<!-- <div class="col-3"> -->
+
+    
+    <div class="card sticky" style="width: 24rem; overflow: hidden; overflow: auto; padding-top: 60px; text-align: center;">
+        <button type="button" class="btn btn-warning" style="padding-top: 10px; border-radius: 10px; font-size:20px;  color: rgb(0, 0, 0); background-color: rgb(237, 255, 133);"><span style="font-family:'Times New Roman', Times, serif;">Friends Profile</span></button>
+        
+        <!-- <button type="button" class="btn btn-warning" style=" border-radius: 10px; font-size:15px; color: rgb(0, 0, 0); background-color: rgb(237, 255, 133);"><span style="font-family:'Times New Roman', Times, serif;">Friends Profile</span></button> -->
+        <!-- <div class="example-button-row">
+            <button mat-fab extended color="primary">
+              <mat-icon>favorite</mat-icon>
+              Primary
+            </button>
+          
+          </div> -->
+        <div class="container">
+
+            <img [src]="friendImageUrl" class="card-img-top" alt="..."
+                style="border-radius: 150px; height: 260px; width: 260px;">
+
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{currentFriendUser.fullName | titlecase}}</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Work as {{currentFriendUser.description | titlecase}}</li>
+                    <!-- <li class="list-group-item">Lives in Mumbai</li> -->
+
+                </ul>
+            </li>
+
+            <li class="list-group-item">{{currentfriendfriendscount}} connections</li>
+            <li class="list-group-item">{{currentfriendpostcount}} Posts</li>
+        </ul>
+        <!-- <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div> -->
+    </div>
+
+<!-- </div> -->

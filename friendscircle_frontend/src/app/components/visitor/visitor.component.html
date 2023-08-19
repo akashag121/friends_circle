@@ -1,0 +1,18 @@
+
+<app-vheader [friendId]="friendId">
+
+</app-vheader>
+<div class="row">
+    <div class="col-4" style="position: relative;">
+        <app-vleftsidebar [friendId]="friendId" ></app-vleftsidebar>
+    </div>
+    <div class="col-8">
+        <router-outlet></router-outlet>
+
+    </div>
+    <!-- <div class="col-4">
+        <app-stories></app-stories>
+
+    </div> -->
+    
+</div>

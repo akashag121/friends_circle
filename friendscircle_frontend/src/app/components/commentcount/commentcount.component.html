@@ -1,0 +1,37 @@
+<div class="card sticky"
+    style="width: 22rem; height: 500px; overflow: hidden; overflow: auto; padding-top: 6px; text-align: center;">
+
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active"
+            style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; background-color: rgb(0, 0, 255); font-size: 17px;">
+            Comments on this Post #({{commentsCount}})
+        </button>
+        <h4 *ngIf="commentsCount===0" style=" padding-top: 30px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">No Comments Yet..</h4>
+        <button type="button" class="list-group-item list-group-item-action" *ngFor="let comment of commentList"
+            style=" text-align: left; font-family:'Times New Roman', Times, serif ; font-size: 17px;">
+            <div style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px ; letter-spacing: 1px;">
+                <u><h5>{{comment.attributeName | titlecase}}</h5></u>
+            </div>
+            <div style="font-family:'Times New Roman', Times, serif; font-size: 15px; letter-spacing: 1px;">
+                {{comment.attributeValue}}
+            </div>
+        </button>
+
+    </div>
+
+    
+    <!-- <mat-list>
+        <mat-list-item>
+            <span matListItemTitle>Title</span>
+            <span matListItemLine>Second line</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span matListItemTitle>Title</span>
+            <span>Second line</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span matListItemTitle>Title</span>
+            Second line
+        </mat-list-item>
+    </mat-list> -->
+</div>

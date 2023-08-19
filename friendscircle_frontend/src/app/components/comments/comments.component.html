@@ -1,0 +1,13 @@
+<div class="card sticky" style="width: 24rem; overflow: hidden; overflow: auto; padding-top: 10px; text-align: center;">
+    
+    <!-- <div class="card"> -->
+        <h5 class="card-title">Comment</h5>
+        <form #form="ngForm" (ngSubmit)="commentSubmit()">
+            <textarea matInput rows="5" cols="40" placeholder="Add your Comment.." #data="ngModel" name="commentData" [(ngModel)]="commentData"></textarea>
+            <button mat-raised-button color="primary" style="margin-bottom: 5px;"><mat-icon>keyboard_double_arrow_right</mat-icon>Submit</button>
+                
+        </form>
+    <!-- </div> -->
+   
+</div>
+{{commentData}}

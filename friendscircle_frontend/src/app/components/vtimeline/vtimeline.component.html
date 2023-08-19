@@ -1,0 +1,36 @@
+<mat-tab-group style="padding-top: 50px;">
+    <mat-tab label="Posts"> 
+        <div class="row">
+            <div class="col-7" style="background-color: rgb(245, 245, 245);">
+                <app-postsbyuserid [userId]="userId" (myEvent)="postComment($event)" (SeeAllLikesEvent)="SeeAllLikesEvent($event)" (SeeAllCommentsEvent)="SeeAllCommentsEvent($event)"></app-postsbyuserid>    
+
+            </div>
+
+            <div class="col-5" *ngIf="IsCommentEnabled">
+                <app-comments [postToBeCommented]="postToBeCommented" (commentAdded)="commentAdded($event)"></app-comments>
+            </div>
+            <!-- <div class="col-5" *ngIf="!IsCommentEnabled" style="background-color: rgb(245, 245, 245);">
+            </div> -->
+
+            <div class="col-5" *ngIf="IsLikeEnabled">
+                <app-likecount [postId]="postIdForSeeingAllLikes"></app-likecount>
+            </div>
+            <!-- <div class="col-5" *ngIf="!IsLikeEnabled" style="background-color: rgb(0, 119, 119);">
+            </div> -->
+
+            <div class="col-5" *ngIf="IsCommentToWatchEnabled">
+                <app-commentcount  [postId]="postIdForSeeingAllComments"></app-commentcount>
+            </div>
+
+   
+
+            <div class="col-5" *ngIf="!IsCommentToWatchEnabled && !IsCommentEnabled && !IsLikeEnabled" style="background-color: rgb(245, 244, 244);">
+            </div>
+
+        </div>
+    
+    </mat-tab>
+    <mat-tab label="Stories">
+        <app-storiesbyuserid [userId]="userId"></app-storiesbyuserid>
+    </mat-tab>
+  </mat-tab-group>
